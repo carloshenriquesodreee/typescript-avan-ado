@@ -1,8 +1,8 @@
 import express from 'express';
-import PsicologoService from '../services/clients.service';
+import PsicologoService from '../services/psicologo.service';
 import debug from 'debug';
 
-const log: debug.IDebugger = debug('app:clients-controller');
+const log: debug.IDebugger = debug('app:Psicologo-controller');
 
 class PsicologoController {
     async listPsicologo(req: express.Request, res: express.Response){
@@ -11,7 +11,7 @@ class PsicologoController {
     }
 
     async getPsicologotById(req: express.Request, res: express.Response) {
-        const client = await PsicologoService.readById(Number(req.params.clientId));
+        const client = await PsicologoService.readById(Number(req.params.PsicologoId));
         res.status(200).send(client);
     }
 
@@ -26,7 +26,7 @@ class PsicologoController {
     }
 
     async removePsicologo(req: express.Request, res: express.Response) {
-        const client = await PsicologoService.deleteById(Number(req.params.cpfCnpj));
+        const client = await PsicologoService.deleteById(Number(req.params.cpf));
         res.status(204).send();
     }
 }

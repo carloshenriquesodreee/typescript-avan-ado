@@ -1,5 +1,5 @@
 import express from 'express';
-import psicologService from '../../common/services/clients.service';
+import psicologService from '../../common/services/psicologos.service';
 import debug from 'debug';
 
 const log: debug.IDebugger = debug('app:users-middleware');
