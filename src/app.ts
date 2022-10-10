@@ -8,6 +8,7 @@ import { debug } from 'debug';
 
 import { CommonRoutesConfig } from '../src/common/common.routs.confing';
 import { PsicologoRoutes } from './psicologo/psicologo.routes';
+import { PacienteRoutes } from './paciente/paciente.routes';
 
 
 const app: express.Application = express();
@@ -34,6 +35,7 @@ if(!process.env.DEBUG) {
 
 app.use(expressWinston.logger(loggerOptions));
 routes.push(new PsicologoRoutes(app));
+routes.push(new PacienteRoutes(app));
 
 const runningMessage = `Servidor rodando na porta ${port}`;
 app.get('/', (req: express.Request, res: express.Response) => {

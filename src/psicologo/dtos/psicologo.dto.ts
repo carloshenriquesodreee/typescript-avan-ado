@@ -1,9 +1,6 @@
-export interface IPsicologoDTO {
-    indexId?: number,
-    nome: string,
-    cpf: number,
-    numeroTelefone: number,
-    rmr: string,
+import { IPessoaDTO } from "../../common/dtos/pessoa.dto";
+
+export interface IPsicologoDTO extends IPessoaDTO {
     numeroDePacientes: number,
     dataContratacao: Date,
     observacoes: string
